@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>mybooks.com</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+<script src="jquery-3.5.1.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" charset="utf-8"></script>
+</head>
+  
+<body>
+  <header>
+      <div class="bgimg">  
+    <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      MYBOOKS
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#About">About</a>
+    <a href="#Books">Books</a>
+  </div>
+</div>
+  </header>
+  <br><div id="About">
+  <br>
+  <br>
+  <center><font size="10px" color="white" face="proxima nova">About Us</font></center>
+  <br>
+<font size="5" color="lightgrey" face="open-sans">&nbsp;A book is a written or printed sheet of pages of information. The information may be related to various subject and topics. The internet <span id="dots">...</span><span id="more">world has also introduced electronic form of books known as e-books.Today books are printed almost in all the languages of the world. Earlier, only a few people would read books.Now, with the spread of education, more and more people are found reading booksBooks are written on all subjects. There are books on literature, history, geography, mathematics etc.
+Books are our real friends. They are our guides. We can learn everything from them. The books contain all the great thoughts of our world and we can learn them by reading the books. The books help us find answers to our questions. The books never fail us.<br><center><img src="photos/body/11.png" height="200" width="200"></img></center></span></font>
+<br><br><button onclick="myFunction()" id="myBtn">Show more</button>
+<br>
+<font size="5" color="lightgrey" face="open-sans"><center>━━━━━━━━━ ✕ ━━━━━━━━━</center></font> 
+</div>
+<br><div id="Books">
+  <br>
+  <br>
+    <div class="f">
+  <center><font size="10px" color="white" face="proxima nova">Books</font></center></div>
+  <div class="mainContainer">
+    <hr>
+    <div class="element">
+      <article>
+        <center><img src="photos/books/5.jpg" height="200" width="150"></img></center>
+        <CENTER><h1>BOOK-1</h1></CENTER>
+        <p><b>A Hacking is the art of creative problem solving, whether that means finding an unconventional solution to a difficult problem or exploiting holes in sloppy programming. Many people call themselves hackers, but few have the strong technical foundation needed to really push the envelope.Hackers are always pushing the boundaries, investigating the unknown, and evolving their art.</b></p>
+
+        <div id="more-js" class="fulltextjs">
+
+          <p><b>Even if you don't already know how to program, Hacking: The Art of Exploitation, 2nd Edition will give you a complete picture of programming, machine architecture, network communications, and existing hacking techniques. Combine this knowledge with the included Linux environment, and all you need is your own creativity.</b></p>        
+        </div>
+
+        <button aria-expanded="false" aria-controls="more-js" class="toggle-content" hidden><span class="text">Read More</span></button>
+        
+      </article>
+    </div>
+
+     <div class="element">
+      <article>
+        <center><img src="photos/books/3.jpg" height="200" width="150"></img></center>
+        <CENTER><h1>BOOK-2</h1></CENTER>
+        <p><b>Mahendra Singh Dhoni is as calm and unruffled a sportsman on the field as he is self-effacing off it. But ‘brute strength’, ‘murderous form’ and ‘a man pos¬sessed’ were some of the phrases that came to mind when, on 5 April 2005 in Visakhapatnam, he exploded onto international consciousness by becoming the first regular Indian keeper to score a one-day century.</b></p>
+
+        <div id="more-js" class="fulltextjs">
+
+          <p><b>With his striking form on the day, his long locks visible beneath his helmet, red tints glinting in the sunlight, ‘Mahi’ Dhoni had transformed from a boy Hailing from an obscure small town to a sports legend with the aura of a rock star. And yet, Dhoni was no child prodigy, no overnight success. When he made his international debut at 23, he was already mature by Indian cricket standards--with five grinding years of domestic cricket behind him.</b></p>        
+        </div>
+
+        <button aria-expanded="false" aria-controls="more-js" class="toggle-content" hidden><span class="text">Read More</span></button>
+        
+      </article>
+    </div>
+  </div>
+</div>
+</div>
+    <font size="5" color="lightgrey" face="open-sans"><center>━━━━━━━━━ ✕ ━━━━━━━━━</center>
+
+ <div class="footer">
+      <p>Copyright © 2020, Design By Pavan Mehta</p>
+      </div>
+   
+        
+    
+
+  <!-- JS script-->
+    <script type="text/javascript">
+      var $toggleButtons = $('.toggle-content');
+      var $fullTextWrappers = $('.fulltextjs');
+      var fullText;
+      var toggleButtonText;
+
+      $fullTextWrappers.attr('hidden', true);
+      $toggleButtons.removeAttr('hidden');
+
+      // add listener for each button
+      $toggleButtons.each(function () {
+        $(this).on('click', function () {
+          fullTextWrapper = $(this).parent().find('.fulltextjs');
+          toggleButtonText = $(this).find('.text');
+          console.log(fullTextWrapper);
+
+          // change attributes and text if full text is shown/hidden
+          if (!fullTextWrapper.attr('hidden')) {
+            toggleButtonText.text('Read More');
+            fullTextWrapper.attr('hidden', true);
+            $(this).attr('aria-expanded', false);
+          } else {
+            toggleButtonText.text('Read Less');
+            fullTextWrapper.removeAttr('hidden');
+            $(this).attr('aria-expanded', true);
+          }
+        });
+      });
+      function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Show more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Show less"; 
+    moreText.style.display = "inline";
+  }
+}
+    </script>
+  </div>
+</body>
+</html>
+
